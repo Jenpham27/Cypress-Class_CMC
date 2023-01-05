@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 describe('Practice', () => {
-    it.only('Practice Form',()=>{
+    it('Practice Form',()=>{
         cy.viewport(1920,1080)
         cy.visit('https://demoqa.com/automation-practice-form/')
         cy.get("input[id='firstName']").type('Jen')
@@ -23,28 +23,5 @@ describe('Practice', () => {
         cy.get("div[id='state']").type('NCR{enter}')
         cy.get("div[id='city']").type('Noida{enter}')
         cy.get("button[id='submit']").click()
-})    
-
-    it('Nopcommerce',()=>{
-        cy.viewport(1902,1080)
-        cy.visit('https://demo.nopcommerce.com/')
-        cy.get("a[class='ico-register']").click()
-        cy.get("input[id='gender-female']").click()
-        cy.get("input[id='FirstName']").type('Jen')
-        cy.get("input[id='LastName']").type('Pham')
-        cy.get("select[name='DateOfBirthDay']").select('27')
-        cy.get("select[name='DateOfBirthMonth']").select('5')
-        cy.get("select[name='DateOfBirthYear']").select('1993')
-        cy.get("input[id='Email']").type('jenpham4@gmail.com')
-        cy.get("input[id='Company']").type('CMC Global')
-        cy.get("input[id='Password']").type('12345678')
-        cy.get("input[id='ConfirmPassword']").type('12345678')
-        cy.get("button[id='register-button']").click()
-        cy.get("div[class='buttons']").click()
-        cy.get("a[class='ico-login']").click()
-        cy.get("input[id='Email']").type('jenpham4@gmail.com')
-        cy.get("input[id='Password']").type('12345678')
-        cy.get("input[id='RememberMe']").click()
-        cy.get("button[class='button-1 login-button']").click()
-    })
+})  
 })
